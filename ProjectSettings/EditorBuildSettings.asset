@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/CLC Splash.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/CLC Period.unity
+    guid: 23f2652e6e0ce08439b82c354262d519
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: a1b65e837aae8704bb5dec85392eac49
+  - enabled: 1
+    path: Assets/Scenes/Menu Settings.unity
+    guid: e1cb5cc91ab574041aed199df687a4a1
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 757cd6f9df575ed4daaeba66e83e1f3f
+  - enabled: 1
+    path: Assets/Scenes/World Select.unity
+    guid: ad88d47cb273e0b4f9bec3c65784eca0
+  - enabled: 1
+    path: Assets/Scenes/Plains/Plains.unity
+    guid: 662e37c02cfc98e4ab4d30588393b35a
+  - enabled: 1
+    path: Assets/Scenes/Plains/A New Beginning.unity
+    guid: d1c5b51d8791ede42b22176303cc9544
+  - enabled: 1
+    path: Assets/Scenes/Plains/On Your Way.unity
+    guid: 761688cff1399534abea2c67264f3337
+  - enabled: 1
+    path: Assets/Scenes/Plains/Ramping Up.unity
+    guid: 2d9073377d9b00e429ab1fb138d35ccd
+  - enabled: 1
+    path: Assets/Scenes/Plains/Grass Eater.unity
+    guid: a58d58b740bebee4d87beba175ec79e8
+  - enabled: 1
+    path: Assets/Scenes/Deep Forest/Deep Forest.unity
+    guid: 329d94655ac47914983b85abc42b424d
+  - enabled: 1
+    path: Assets/Scenes/Deep Forest/Into The Woods.unity
+    guid: 027d15f31df83f448bf5d0ae5b1d3380
+  - enabled: 1
+    path: Assets/Scenes/Deep Forest/Downhill Doozy.unity
+    guid: cd50962445458234ea006b54123a4195
+  - enabled: 1
+    path: Assets/Scenes/Deep Forest/Ancient Temple.unity
+    guid: cc54992d889187d47a6f26274fc39b1e
+  - enabled: 1
+    path: Assets/Scenes/Deep Forest/MUUSHROOM.unity
+    guid: 6a5f6477df678f7499bf29edc7a6fe71
+  - enabled: 1
+    path: Assets/Scenes/Sandy Dunes/Sandy Dunes.unity
+    guid: 4dccf3e0a4dc38f40863211f4dfec174
+  - enabled: 1
+    path: Assets/Scenes/Sandy Dunes/Getting Warm.unity
+    guid: d3f025a0cc667794cb85bdbf1d366f66
+  - enabled: 1
+    path: Assets/Scenes/Sandy Dunes/Quick Quicksand.unity
+    guid: 5fe30b1b467e2094fabccdbca88bd45f
+  - enabled: 1
+    path: Assets/Scenes/Sandy Dunes/Secret Civilization.unity
+    guid: 6be7aeae646ca80448c0f1ab8da596fc
+  - enabled: 1
+    path: Assets/Scenes/Sandy Dunes/Senor Cactus.unity
+    guid: e6c945d66fd34a74992d7a569e75eef2
+  - enabled: 1
+    path: Assets/Scenes/Clouds/Clouds.unity
+    guid: af19d7d682debe84b854732294d09deb
+  - enabled: 1
+    path: Assets/Scenes/Clouds/Windy Way.unity
+    guid: 2d017d64d78497c4e97fce9dce1d50d4
+  - enabled: 1
+    path: Assets/Scenes/Clouds/Rainy Day.unity
+    guid: cf2e51278b2ed094098356b84e8d09ee
+  - enabled: 1
+    path: Assets/Scenes/Clouds/Stormy Night.unity
+    guid: 07b10c5d0932ac44dbb19f33c95b50f2
+  - enabled: 1
+    path: Assets/Scenes/Clouds/Thunder Triplets.unity
+    guid: 862d545caf9e0474ab5c996966d87e46
+  - enabled: 1
+    path: Assets/Scenes/Lava/Lava.unity
+    guid: b07c74baae4947b4f9ef0f5242bc8991
+  - enabled: 1
+    path: Assets/Scenes/Lava/Watch Your Step.unity
+    guid: bba3fc62dfc96c940be049e1ab6aa1a9
+  - enabled: 1
+    path: Assets/Scenes/Lava/Treacherous Trap.unity
+    guid: 910da58e3a1a7da44ba0b62454097257
+  - enabled: 1
+    path: Assets/Scenes/Lava/Into The Castle.unity
+    guid: 4619c6f4e1a85ac45973b0c396c7a382
+  - enabled: 1
+    path: Assets/Scenes/Lava/King Kane.unity
+    guid: 693ba3c6a52bfaa44b3842d032c7b10e
+  - enabled: 1
+    path: Assets/Scenes/Paused Settings.unity
+    guid: f0011eb1d7ba6844790c0ae764e5bb43
+  m_configObjects: {}
