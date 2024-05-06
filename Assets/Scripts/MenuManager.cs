@@ -161,7 +161,6 @@ public class MenuManager : MonoBehaviour
 
     public void Lava()
     {
-        Debug.Log("Lava");
         SceneManager.LoadSceneAsync((int)sceneNames.Lava);
     }
 

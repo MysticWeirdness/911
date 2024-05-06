@@ -16,6 +16,7 @@ public class FollowPoints : MonoBehaviour
         {
             points.Add(point);
         }
+        points.RemoveAt(0);
         gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>(); 
     }
     private void Start()

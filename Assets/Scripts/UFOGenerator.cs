@@ -7,16 +7,44 @@ public class UFOGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject UFO;
 
+    [SerializeField] private int enemiesPerWave;
+    [SerializeField] private int waves;
+
+    private int enemiesSpawned = 0;
+    private int wavesFinished = 0;
     private async void Start()
     {
-        await Timer();
+        await TimeBetweenEnemySpawns();
     }
 
-    private async Task Timer()
+    private async Task TimeBetweenEnemySpawns()
     {
-        await Task.Delay(500);
+        await Task.Delay(1000);
         Instantiate(UFO);
-        //await Timer();
+        enemiesSpawned++;
+        if(enemiesSpawned >= enemiesPerWave)
+        {
+            wavesFinished++;
+            if(wavesFinished !>= waves)
+            {
+                await NewWave();
+            }
+            else
+            {
+                // This is where you will call the win function
+            }
+        }
+        else
+        {
+            await TimeBetweenEnemySpawns();
+        }
+    }
+
+    private async Task NewWave()
+    {
+        await Task.Delay(5000);
+        enemiesSpawned = 0;
+        await TimeBetweenEnemySpawns();
     }
 
 }

@@ -45,13 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a1ba4d14acec084d8cd14829690dad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  points: []
 --- !u!1001 &2465879588070215861
 PrefabInstance:
   m_ObjectHideFlags: 0
