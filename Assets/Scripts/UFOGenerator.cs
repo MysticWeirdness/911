@@ -24,15 +24,7 @@ public class UFOGenerator : MonoBehaviour
         enemiesSpawned++;
         if(enemiesSpawned >= enemiesPerWave)
         {
-            wavesFinished++;
-            if(wavesFinished !>= waves)
-            {
-                await NewWave();
-            }
-            else
-            {
-                // This is where you will call the win function
-            }
+
         }
         else
         {
