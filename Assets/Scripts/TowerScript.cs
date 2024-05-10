@@ -8,7 +8,7 @@ public class TowerScript : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab;
     private float projectileSpeed = 1f;
     private float projectileDamage = 1f;
-    private float range = 5f;
+    private float range = 2.5f;
     private float cooldownDuration = 1f;
     private float cooldown = 0f;
     private GameObject targettedEnemy;
