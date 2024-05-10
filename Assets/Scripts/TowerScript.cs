@@ -13,6 +13,10 @@ public class TowerScript : MonoBehaviour
     private float cooldown = 0f;
     private GameObject targettedEnemy;
 
+    [Header("User Experience")]
+    [SerializeField] private GameObject rangePreview;
+    private bool showPreview = false;
+
     private void Update()
     {
         float shortestDistance = Mathf.Infinity;
@@ -21,7 +25,9 @@ public class TowerScript : MonoBehaviour
         {
             if(Vector3.Distance(transform.position, enemy.transform.position) < shortestDistance && Vector3.Distance(transform.position, enemy.transform.position) <= range)
             {
+                shortestDistance = Vector3.Distance(transform.position, enemy.transform.position);
                 targettedEnemy = enemy;
+                LookAtEnemy(enemy.transform.position);
             }
         }
 
@@ -36,5 +42,22 @@ public class TowerScript : MonoBehaviour
     private void Shoot(GameObject enemy)
     {
 
+    }
+
+    private void LookAtEnemy(Vector3 enemyPosition)
+    {
+        transform.LookAt(enemyPosition);
+    }
+
+    private void OnMouseDown()
+    {
+        Debug.Log("Clicked Tower");
+        TogglePreview();
+    }
+
+    private void TogglePreview()
+    {
+        showPreview = !showPreview;
+        rangePreview.SetActive(showPreview);
     }
 }
