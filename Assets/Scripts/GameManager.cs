@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject PauseMenu;
     public int enemiesReached = 0;
+    private int currency = 100;
     public void EnemyReachedTheEnd()
     {
         enemiesReached++;
@@ -18,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     private void Restart()
     {
-
+        Debug.Log("You Lost");
     }
 
     private void Update()

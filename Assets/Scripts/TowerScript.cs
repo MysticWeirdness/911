@@ -8,6 +8,7 @@ public class TowerScript : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab;
     private float projectileSpeed = 1f;
     private float projectileDamage = 1f;
+    // range is the radius 
     private float range = 2.5f;
     private float cooldownDuration = 1f;
     private float cooldown = 0f;
@@ -32,20 +33,32 @@ public class TowerScript : MonoBehaviour
             {
                 shortestDistance = Vector3.Distance(transform.position, enemy.transform.position);
                 targettedEnemy = enemy;
-                LookAtEnemy(enemy.transform.position);
+                LookAtEnemy(targettedEnemy.transform.position);
+            }
+            else if(Vector3.Distance(transform.position, enemy.transform.position) > shortestDistance && Vector3.Distance(transform.position, enemy.transform.position) <= range)
+            {
+                shortestDistance = Vector3.Distance(transform.position, enemy.transform.position);
+                targettedEnemy = enemy;
+                LookAtEnemy(targettedEnemy.transform.position);
+            }
+            if(shortestDistance > range)
+            {
+                targettedEnemy = null;
             }
         }
 
-        if(targettedEnemy != null && cooldown <= 0)
+        if(cooldown <= 0 && targettedEnemy != null)
         {
+            Shoot(targettedEnemy);
             cooldown += cooldownDuration;
         }
+
         cooldown -= Time.deltaTime;
     }
 
-    private async void ShootTimer()
+    private void Shoot(GameObject enemy)
     {
-
+        enemy.gameObject.GetComponent<EnemyScript>().TakeDamage(projectileDamage);
     }
 
     private void LookAtEnemy(Vector3 enemyPosition)

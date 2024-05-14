@@ -344,6 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1518337880985117840}
   - component: {fileID: 169210179643388442}
+  - component: {fileID: 4733827136931226360}
   m_Layer: 0
   m_Name: UFO
   m_TagString: Enemy
@@ -381,6 +382,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: []
+--- !u!114 &4733827136931226360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8380483204565815872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16de1ba3d5bbbe545b08bf70f62c3c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 6712409953457374709}
 --- !u!1 &8398914353414042451
 GameObject:
   m_ObjectHideFlags: 0
