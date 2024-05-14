@@ -14,6 +14,11 @@ public class UFOGenerator : MonoBehaviour
     private int wavesFinished = 0;
     private async void Start()
     {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
         await TimeBetweenEnemySpawns();
     }
 

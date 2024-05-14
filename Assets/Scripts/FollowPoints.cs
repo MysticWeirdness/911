@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FollowPoints : MonoBehaviour
 {
-    private float speed = 0.025f;
+    private float speed = 1f;
     private int currentPoint = 1;
     private GameManager gameManager;
     [SerializeField] private List<Transform> points = new List<Transform>();
@@ -43,6 +43,6 @@ public class FollowPoints : MonoBehaviour
 
     private void MoveTowardsNewPoint()
     {
-        transform.position = Vector3.MoveTowards(transform.position, points[currentPoint].position, speed);
+        transform.position = Vector3.MoveTowards(transform.position, points[currentPoint].position, speed * Time.deltaTime);
     }
 }

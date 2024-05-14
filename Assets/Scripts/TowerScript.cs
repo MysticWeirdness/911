@@ -14,9 +14,14 @@ public class TowerScript : MonoBehaviour
     private GameObject targettedEnemy;
 
     [Header("User Experience")]
+    Camera cam;
     [SerializeField] private GameObject rangePreview;
     private bool showPreview = false;
 
+    private void Start()
+    {
+        cam = Camera.main;
+    }
     private void Update()
     {
         float shortestDistance = Mathf.Infinity;
@@ -34,12 +39,11 @@ public class TowerScript : MonoBehaviour
         if(targettedEnemy != null && cooldown <= 0)
         {
             cooldown += cooldownDuration;
-            Shoot(targettedEnemy);
         }
         cooldown -= Time.deltaTime;
     }
 
-    private void Shoot(GameObject enemy)
+    private async void ShootTimer()
     {
 
     }
@@ -49,13 +53,7 @@ public class TowerScript : MonoBehaviour
         transform.LookAt(enemyPosition);
     }
 
-    private void OnMouseDown()
-    {
-        Debug.Log("Clicked Tower");
-        TogglePreview();
-    }
-
-    private void TogglePreview()
+    public void TogglePreview()
     {
         showPreview = !showPreview;
         rangePreview.SetActive(showPreview);
