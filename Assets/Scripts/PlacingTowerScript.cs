@@ -11,6 +11,8 @@ public class PlacingTowerScript : MonoBehaviour
     [SerializeField] private List<GameObject> towers = new List<GameObject>();
     private int currentTowerIndex = 0;
     [SerializeField] private TextMeshProUGUI placingMode;
+    [SerializeField] private TextMeshProUGUI selectedTowerText;
+    private string selectedTower = "Base Tower";
     [SerializeField] private GameObject towerPreview;
     public bool placing { get; private set; } = false;
 
@@ -53,7 +55,6 @@ public class PlacingTowerScript : MonoBehaviour
                 {
                     if (gameManager.GetCurrency() >= towers[currentTowerIndex].GetComponent<TowerScript>().GetTowerValue())
                     {
-                        Debug.Log(gameManager.GetCurrency());
                         hit.collider.gameObject.layer = LayerMask.NameToLayer("Unplaceable");
                         gameManager.ChangeCurrency(-towers[currentTowerIndex].GetComponent<TowerScript>().GetTowerValue());
                         Instantiate(towers[currentTowerIndex], new Vector3(hit.transform.position.x, hit.transform.position.y + 0.2f, hit.transform.position.z), Quaternion.identity);
@@ -76,15 +77,20 @@ public class PlacingTowerScript : MonoBehaviour
             placingMode.text = "Placing: No";
             placingMode.color = Color.red;
         }
+        selectedTowerText.text = "Selected Tower: " + selectedTower;
     }
 
     public void BaseTower()
     {
         currentTowerIndex = 0;
+        selectedTower = "Base Tower";
+        UpdateUI();
     }
 
     public void BigTower()
     {
         currentTowerIndex = 1;
+        selectedTower = "Big Tower";
+        UpdateUI();
     }
 }

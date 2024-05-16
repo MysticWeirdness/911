@@ -8,7 +8,6 @@ public class UFOGenerator : MonoBehaviour
     [SerializeField] private GameObject UFO;
 
     [SerializeField] private int enemiesPerWave;
-    [SerializeField] private int waves;
 
     private int enemiesSpawned = 0;
     private int wavesFinished = 0;
@@ -37,7 +36,7 @@ public class UFOGenerator : MonoBehaviour
         }
     }
 
-    private async Task NewWave()
+    public async Task NewWave()
     {
         await Task.Delay(5000);
         enemiesSpawned = 0;

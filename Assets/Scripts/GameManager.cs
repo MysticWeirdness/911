@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     }
     private void Restart()
     {
-        Debug.Log("You Lost");
+
     }
 
     private void Update()
