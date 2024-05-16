@@ -6,11 +6,10 @@ public class TowerScript : MonoBehaviour
 {
     [Header("Attacking")]
     [SerializeField] private GameObject projectilePrefab;
-    private float projectileSpeed = 1f;
-    private float projectileDamage = 1f;
+    [SerializeField] private float projectileDamage;
     // range is the radius 
     private float range = 2.5f;
-    private float cooldownDuration = 1f;
+    [SerializeField] float cooldownDuration;
     private float cooldown = 0f;
     private GameObject targettedEnemy;
 
@@ -18,6 +17,7 @@ public class TowerScript : MonoBehaviour
     Camera cam;
     [SerializeField] private GameObject rangePreview;
     private bool showPreview = false;
+    [SerializeField] private int towerValue;
 
     private void Start()
     {
@@ -66,6 +66,10 @@ public class TowerScript : MonoBehaviour
         transform.LookAt(enemyPosition);
     }
 
+    public int GetTowerValue()
+    {
+        return towerValue;
+    }
     public void TogglePreview()
     {
         showPreview = !showPreview;

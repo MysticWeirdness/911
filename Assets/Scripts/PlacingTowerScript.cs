@@ -6,16 +6,24 @@ using UnityEngine;
 public class PlacingTowerScript : MonoBehaviour
 {
     private Camera cam;
+    private GameManager gameManager;
     [SerializeField] private LayerMask layerMask;
-    [SerializeField] private GameObject tower;
+    [SerializeField] private List<GameObject> towers = new List<GameObject>();
+    private int currentTowerIndex = 0;
     [SerializeField] private TextMeshProUGUI placingMode;
     [SerializeField] private GameObject towerPreview;
     public bool placing { get; private set; } = false;
+
+    private void Awake()
+    {
+        gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+    }
     private void Start()
     {
         cam = Camera.main;
     }
 
+    
     public void TogglePlacingMode()
     {
         placing = !placing;
@@ -43,8 +51,13 @@ public class PlacingTowerScript : MonoBehaviour
                 towerPreview.transform.position = new Vector3(hit.transform.position.x, hit.transform.position.y + 0.35f, hit.transform.position.z);
                 if (Input.GetMouseButtonDown(0))
                 {
-                    hit.collider.gameObject.layer = LayerMask.NameToLayer("Unplaceable");
-                    Instantiate(tower, new Vector3(hit.transform.position.x, hit.transform.position.y + 0.2f, hit.transform.position.z), Quaternion.identity);
+                    if (gameManager.GetCurrency() >= towers[currentTowerIndex].GetComponent<TowerScript>().GetTowerValue())
+                    {
+                        Debug.Log(gameManager.GetCurrency());
+                        hit.collider.gameObject.layer = LayerMask.NameToLayer("Unplaceable");
+                        gameManager.ChangeCurrency(-towers[currentTowerIndex].GetComponent<TowerScript>().GetTowerValue());
+                        Instantiate(towers[currentTowerIndex], new Vector3(hit.transform.position.x, hit.transform.position.y + 0.2f, hit.transform.position.z), Quaternion.identity);
+                    }
                 }
             }
         }
@@ -63,5 +76,15 @@ public class PlacingTowerScript : MonoBehaviour
             placingMode.text = "Placing: No";
             placingMode.color = Color.red;
         }
+    }
+
+    public void BaseTower()
+    {
+        currentTowerIndex = 0;
+    }
+
+    public void BigTower()
+    {
+        currentTowerIndex = 1;
     }
 }

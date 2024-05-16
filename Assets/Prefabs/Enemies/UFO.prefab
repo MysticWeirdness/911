@@ -395,6 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 6712409953457374709}
+  enemyValue: 25
 --- !u!1 &8398914353414042451
 GameObject:
   m_ObjectHideFlags: 0
