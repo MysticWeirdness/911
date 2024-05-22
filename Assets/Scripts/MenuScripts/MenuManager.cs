@@ -188,4 +188,9 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadSceneAsync((int)sceneNames.Paused_Settings);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

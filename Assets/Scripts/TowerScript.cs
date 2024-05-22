@@ -7,7 +7,7 @@ public class TowerScript : MonoBehaviour
     [Header("Attacking")]
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float projectileDamage;
-    // range is the radius 
+    // range is the radius in world units
     private float range = 2.5f;
     [SerializeField] float cooldownDuration;
     private float cooldown = 0f;
